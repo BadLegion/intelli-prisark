@@ -380,18 +380,27 @@ function render(){const c=calculate(state),s=c.scenario,u=c.u,v=voice(s);
   window.currentResult=c;window.currentState={...s};
 }
 function renderReview(s,c,v){
-  const tableRow=(label,formula,cost,cls='')=>`<tr class="${cls}"><td>${label}</td><td class="tiny">${formula}</td><td class="num">${kr(cost,4)}</td><td class="num">${kr(cost/s.duration,4)}</td></tr>`;
+  const tableRow=(label,formula,cost,cls='',minuteCost=cost/s.duration)=>`<tr class="${cls}"><td>${label}</td><td class="tiny">${formula}</td><td class="num">${kr(cost,6)}</td><td class="num">${kr(minuteCost,6)}</td></tr>`;
+  // Reconcile the displayed columns as well as the full-precision calculation.
+  // This is display rounding, never a new supplier charge.
+  const micro=x=>Math.sign(x)*Math.round((Math.abs(x)+Number.EPSILON)*1e6);
+  const roundingRow=(parts,total)=>{
+    const perCall=micro(total)-parts.reduce((sum,x)=>sum+micro(x),0);
+    const perMinute=micro(total/s.duration)-parts.reduce((sum,x)=>sum+micro(x/s.duration),0);
+    return perCall||perMinute?tableRow('Visningsafrunding','Kun forskel fra afrundede deltal; ingen udgift',perCall/1e6,'',perMinute/1e6):'';
+  };
   const componentRows=v.components.map(r=>tableRow(r.label,r.tokens!==undefined?`${num(r.tokens,0)} tokens × ${num(r.rate,2)} USD/mio. × ${num(s.usd,2)}`:`${num(r.minutes,2)} min. × ${num(r.minuteRate,3)} USD × ${num(s.usd,2)}`,r.cost));
   const raw=v.raw*s.duration,reserve=raw*s.reserve/100,future=(raw+reserve)*s.future/100;
-  $('detail-rows').innerHTML=componentRows.join('')+
+  $('detail-rows').innerHTML=componentRows.join('')+roundingRow(v.components.map(r=>r.cost),raw)+
     tableRow('AI før reserve','Summen af AI-leddene ovenfor',raw,'total')+
-    tableRow('AI-reserve',`${num(s.reserve)} % × ${kr(raw,4)} · skøn, ingen fakturalinje`,reserve)+
+    tableRow('AI-reserve',`${num(s.reserve)} % × ${kr(raw,6)} · skøn, ingen fakturalinje`,reserve)+
     (s.future?tableRow('Ændret AI-kost',`${num(s.future)} % scenarie`,future):'')+
     tableRow('SIP indgående telefoni',`${num(s.duration,1)} min. × ${num(s.sipInUsd,4)} USD × ${num(s.usd,2)}`,v.sip*s.duration)+
     tableRow('SIP oprunding + evt. reserve',`${num(v.billedSipMinutes-s.duration,2)} min. oprunding + ${num(s.rounding)} sek. ekstra reserve`,(v.roundedSip-v.sip)*s.duration)+
     tableRow('Andre variable teleudgifter',`${num(s.duration,1)} min. × ${kr(s.phoneExtra,3)} · fx betalt optagelse eller trafik`,s.phoneExtra*s.duration)+
+    roundingRow([raw,reserve,future,v.sip*s.duration,(v.roundedSip-v.sip)*s.duration,s.phoneExtra*s.duration],v.totalCall)+
     tableRow('Variabel AI-telefonkost','AI + reserve + SIP; faste udgifter vises til højre',v.totalCall,'total');
-  $('detail-note').textContent=`Ét ${num(s.duration,1)}-minutters opkald med ${v.T} svarrunder, ${num(s.prompt)} prompttokens og ${num(s.cache)} % OpenAI-cache på gentaget input. Ingen historikbesparelse ved komprimering er medregnet. ${s.duration>10?'Over 10 min. er en stresstest, ikke nuværende drift: lokal timeout er 10 min., og rigtige API-kontekstvinduer begrænser historikken.':''}`;
+  $('detail-note').textContent=`Seks decimaler gør delregningen efterregnelig; præcisionen er regneteknisk, ikke en måling. Ét ${num(s.duration,1)}-minutters opkald med ${v.T} svarrunder, ${num(s.prompt)} prompttokens og ${num(s.cache)} % OpenAI-cache. Ingen historikbesparelse ved komprimering er medregnet. ${s.duration>10?'Over 10 min. er en stresstest; lokal timeout er 10 min., og API-kontekstvinduer begrænser historikken.':''}`;
   const e=c.phone, monthly=[
     [s.plan==='pay'?'Nummerleje fra kunden':'Kanalleje / platform fra kunden',c.p.fixedRevenue],
     ['AI-forbrug fra kunden',e.variableRevenue],['Viderestilling fra kunden',s.transferQty*c.transfer.rate],['Ekstra numre fra kunden',s.extraNumbers*s.numberPrice],['Samlet telefonindtægt',c.telephony.revenue,'total'],

@@ -2,6 +2,16 @@
 
 **Regneoperationerne er kontrolleret. AI-forbruget og serverkapaciteten er fortsat budgetskøn.**
 
+## Rettelse efter kontrol af den viste PDF-tabel
+
+Fire decimaler gjorde delregningen uigennemsigtig: Gemini-tabellens viste AI-led summerede til 0,9171, mens subtotalen viste 0,9172. Python og HTML afrundede desuden promptlinjens 0,01935 forskelligt. Nu bruger begge detaljer seks decimaler og samme afrundingsprincip. De viste AI-led og totalsummer i begge PDF-kolonner er særskilt testet med Decimal og stemmer præcist i standardprofilen.
+
+`0,917190 AI + 0,183438 reserve + 0,129645 SIP = 1,230273 kr./opkald`.
+
+`1,230273 / 3 = 0,410091 kr./AI-minut`.
+
+HTML viser en særskilt visningsafrunding, hvis andre indstillinger giver en rest ved seks decimaler. Den ændrer ikke kost eller resultat. Seks decimaler viser regnepræcision, ikke sikkerhed om det faktiske AI-forbrug.
+
 ## Rettelser
 
 - SIP afrundes nu op til hele minutter pr. opkald. Den tidligere 30-sekunders gennemsnitsreserve kunne undervurdere meget korte opkald og overvurdere opkald på præcis hele minutter. Måned og opkaldseksempler bruger nu samme metode. Ekstra reserve kan tilvælges særskilt.
