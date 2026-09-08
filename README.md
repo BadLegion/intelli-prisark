@@ -6,14 +6,14 @@ Fire A4-sider i liggende format: to sider for Gemini og to for OpenAI. Udskriv i
 
 | Ark | Indhold |
 |---|---|
-| [Gemini Live](gemini.html) | Kost først, kanalleje, AI-loft, viderestilling og månedsresultat |
-| [OpenAI Realtime](index.html) | Samme beregninger med OpenAI som telefonmodel |
+| [Gemini Live - åbn beregner](https://badlegion.github.io/intelli-prisark/gemini.html) | Kost først, kanalleje, AI-loft, viderestilling og månedsresultat |
+| [OpenAI Realtime - åbn beregner](https://badlegion.github.io/intelli-prisark/) | Samme beregninger med OpenAI som telefonmodel |
 | [Kontrolgrundlag](GRUNDLAG.md) | Kilder, formler, kodefund og begrænsninger |
 | [Tidligere revisioner](HISTORIK.md) | Historik bag rettelserne af prisstrategien |
 
 ## Brug HTML-arkene
 
-Download filerne samlet via **Code → Download ZIP**, pak dem ud, og åbn `gemini.html` eller `index.html` i browseren. GitHub viser selve HTML-koden; de interaktive beregninger kører, når filen åbnes i browseren. Begge ark virker uden en server. Blå felter kan ændres, og “Gem HTML med mine tal” gemmer en selvstændig kopi.
+Åbn beregnerne direkte via linkene ovenfor. De er udgivet på GitHub Pages. Blå felter kan ændres, og “Gem HTML med mine tal” gemmer en selvstændig kopi. Du kan også hente filerne via **Code → Download ZIP**, pakke dem ud og åbne HTML lokalt. Ændringer, du foretager i beregneren, gemmes ikke automatisk i GitHub eller hos andre brugere.
 
 Knappen **Print-PDF (A4)** åbner den færdige PDF. PDF'en er et fast øjebliksbillede af standardtallene; ændringer i HTML opdaterer ikke PDF automatisk. Arkene er uafhængige, så ændringer flyttes ikke mellem dem.
 
