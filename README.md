@@ -27,4 +27,4 @@ Knappen **Print-PDF (A4)** åbner den færdige PDF. PDF'en er et fast øjebliksb
 
 Alle beløb er DKK ekskl. moms. Valutakurser, AI-forbrug, reserver og serverkapacitet er budgetforudsætninger. Priser er salgsforslag. EU/EØS-behandling er ikke dokumenteret for den nuværende leverandørkæde. Automatisk omstilling ved loftet og den nye fakturering er endnu ikke implementeret i produktet.
 
-Repository: [BadLegion/intelli-prisark](https://github.com/BadLegion/intelli-prisark), privat. Priskilder kontrolleret 7.-8. september 2026; PDF og publicering klargjort 8. september 2026.
+Repository: [BadLegion/intelli-prisark](https://github.com/BadLegion/intelli-prisark), offentligt. Priskilder kontrolleret 7.-8. september 2026; PDF og publicering klargjort 8. september 2026.
