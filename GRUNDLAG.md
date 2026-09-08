@@ -1,6 +1,6 @@
 # Kontrolgrundlag · prisregel revideret 8. september 2026
 
-Seneste ændring: justerbart AI-loft på 8 minutter med særskilt betalt viderestilling. Se sidste afsnit for aktuelle formler; tidligere 10-minutters AI-eksempler er bevaret som historisk regressionstest.
+Seneste fulde regnekontrol: [rettelser, aktuelle tal og kildekontrol](KONTROL.md). Aktuelt: konkret SIP-oprunding, slutbeløb i hele øre, gebyrer i alle DB-tal, ekstra numre og særskilt web-varighed. Tidligere 10-minutters AI-eksempler nedenfor bevarer den daværende 30-sekunders reserve som historisk regressionstest.
 
 Beslutningsarkene er [OpenAI](index.html) og [Gemini](gemini.html). Dette bilag beskriver kontrolarbejdet; det er ikke kundevilkår.
 
@@ -78,7 +78,7 @@ For en ensartet samtale med længde `L` og `T = ceil(L × AI-svar pr. minut)`:
 - Første prompt faktureres én gang. Gentaget prompt og teksthistorik: `P × (T − 1) + transskriptionstokens × (T − 1) / 2`.
 - Hvert led ganges med korrekt input-/outputtakst. OpenAI-cache rabatterer kun den valgte andel af gentaget input, ikke ny lyd eller output. Gemini bruger ingen cacherabat.
 - OpenAI inputtransskription lægges til særskilt. AI-summen får 20 % skønsreserve og divideres med `L`.
-- SIP-input tillægges med et ekstra gennemsnitligt afrundingsbudget på 30 sekunder pr. opkald. Det er et fordelingsskøn, ikke afrundingen af hvert enkelt 3-minutters eksempel.
+- SIP-input afrundes pr. opkald: `ceil(L) × SIP-takst`. Ekstra reserve er 0 som standard og kan tilvælges efter oprunding. Opkaldets slutbetaling rundes op til hele øre. Web-tale bruger sin egen varighed.
 
 Dette er en analytisk model med jævnt fordelt tale, ikke replay af faktiske opkald. Lydtokenrater, rundetal, prompt, historik, afbrydelser, komprimering, udbyderspecifik VAD og thinking gør faktisk kost variabel. Gennemsnitslængden alene er utilstrækkelig ved en bred blanding af korte og lange samtaler; udgiften er ikke lineær i samtalelængde. Arkene viser derfor også 1/3/10-minutters profiler og et +50 % AI-scenarie.
 

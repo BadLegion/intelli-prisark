@@ -8,6 +8,7 @@ Fire A4-sider i liggende format: to sider for Gemini og to for OpenAI. Udskriv i
 |---|---|
 | [Gemini Live - åbn beregner](https://badlegion.github.io/intelli-prisark/gemini.html) | Kost først, kanalleje, AI-loft, viderestilling og månedsresultat |
 | [OpenAI Realtime - åbn beregner](https://badlegion.github.io/intelli-prisark/) | Samme beregninger med OpenAI som telefonmodel |
+| [Seneste regnekontrol](KONTROL.md) | Rettelser og aktuelle tal efter uafhængig kontrol |
 | [Kontrolgrundlag](GRUNDLAG.md) | Kilder, formler, kodefund og begrænsninger |
 | [Tidligere revisioner](HISTORIK.md) | Historik bag rettelserne af prisstrategien |
 
