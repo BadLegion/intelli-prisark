@@ -35,6 +35,7 @@ DG = 18.715,19 / 28.900,00 = ca. 64,8 %. Ikke-oplyst arbejde, opstart, udvikling
 - 126 kontroller af den faktiske HTML-renderer: enhedspriser, opkaldsfaser, moduler, månedsregnskaber, minutudvikling og AI-detaljer. Alle viste kronebeløb har to decimaler, og øresummerne stemmer.
 - Ændret AI-varighed følger med i alle månedsscenarier, viderestillings- og konkurrenttabeller.
 - Det kompakte overblik har 7 sider og 12 tabeller. Alle tabeller og kronebeløb er afstemt mellem HTML, PDF og den redigerbare PowerPoint; siderne er desuden visuelt gennemgået.
+- Delsummer for AI-kost og månedsregnskab er markeret særskilt. De viste regnelinjer for nummer/support, SMS og månedskost er afstemt i øre. Kanalprisen er fortsat 4.000,00 kr./md.
 - HTML, PDF og PowerPoint bruger samme beregningsgrundlag. Alle kronebeløb vises med 2 decimaler; eksplicit visningsafrunding sikrer, at kolonnernes viste delsummer stemmer. Det er ikke en leverandørudgift.
 
 ## Fortolkning af risiko

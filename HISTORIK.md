@@ -1,3 +1,7 @@
+# 9. september 2026 · korte tekster og tydelige delsummer
+
+Kortere tekster og tydelige plus-, minus- og lighedstegn i overblikket. Månedsregnskabet viser abonnement og forbrug frem til indtægt, DB og resultat. AI- og SMS-kost har korte regnelinjer. Priser og regnskabsresultater er uændrede.
+
 # 9. september 2026 · kanalpris rettet til 4.000,00 kr.
 
 Ejer har bekræftet 4.000,00 kr. pr. digital medarbejder/md. fra prisnoterne. Tre koster 12.000,00 kr. før minutforbrug. Rabatten på 40 % er allerede indregnet i oplægget. Alle aktive abonnementer, månedscases og partnerbeløb er genberegnet. 20 for 60.000,00 kr. beskrives særskilt som et mængdetilbud. Historiske priser nedenfor er ikke gældende.
