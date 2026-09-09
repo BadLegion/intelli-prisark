@@ -1,3 +1,7 @@
+# 9. september 2026 · fast pris og alle opkald omstillet
+
+Gemini er hovedmodel. Fast 1,50 kr./påbegyndt AI-minut, 2.500 kr./digital medarbejder/md., 8 min. AI + standard 10 min. mobilomstilling på alle opkald. OpenAI er reference på openai.html. Forsiden/index viser nu Gemini. Nye partner-/konkurrentcases, gennemgåede prisnoter, app/SMS-budgetforslag og 3-siders PDF. De nedenstående historiske forslag er ikke aktive priser.
+
 # INTELLI – to prisark
 
 [**Print-PDF: fire A4-sider i liggende format**](INTELLI-prisark-print.pdf) - Gemini og OpenAI, to sider pr. model. PDF bruger standardforudsætningerne fra HTML, inklusive AI-loftet på 8 minutter.

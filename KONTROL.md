@@ -1,66 +1,47 @@
-# Regnekontrol · 8. september 2026
+# Regnekontrol · 9. september 2026
 
-**Regneoperationerne er kontrolleret. AI-forbruget og serverkapaciteten er fortsat budgetskøn.**
+Aktiv hovedmodel: **Gemini, fast 1,50 kr./påbegyndt AI-minut, 8 min. AI-loft, 100 % viderestilling**. Den gamle kostfølgende salgsregel er ikke aktiv.
 
-## Rettelse efter kontrol af den viste PDF-tabel
+## Efterregnet standardcase
 
-Fire decimaler gjorde delregningen uigennemsigtig: Gemini-tabellens viste AI-led summerede til 0,9171, mens subtotalen viste 0,9172. Python og HTML afrundede desuden promptlinjens 0,01935 forskelligt. Nu bruger begge detaljer seks decimaler og samme afrundingsprincip. De viste AI-led og totalsummer i begge PDF-kolonner er særskilt testet med Decimal og stemmer præcist i standardprofilen.
+3 digitale medarbejdere, 1.000 opkald, hvert opkald 8 min. AI + 10 min. DK mobilomstilling. 0 SMS, ét inkluderet telefonnummer, 0 partner/gebyr.
 
-`0,917190 AI + 0,183438 reserve + 0,129645 SIP = 1,230273 kr./opkald`.
+| Post | DKK |
+|---|---:|
+| 3 × 2.500 kr. abonnement | 7.500,000 |
+| 8.000 AI-min. × 1,50 kr. | 12.000,000 |
+| 10.000 omstillingsmin. × 0,49 kr. | 4.900,000 |
+| Samlet indtægt | 24.400,000 |
+| Gemini inkl. reserve + indgående SIP | 6.276,108 |
+| Omstilling, begge SIP-led | 3.811,950 |
+| Ét mobilnummer | 96,750 |
+| Samlet direkte kost | 10.184,808 |
+| DB | 14.215,192 |
+| Server | 74,600 |
+| Supportreserve, planlægningsskøn | 500,000 |
+| Resultat før skat efter valgte udgifter | 13.640,592 |
 
-`1,230273 / 3 = 0,410091 kr./AI-minut`.
+DG = 14.215,192 / 24.400 = ca. 58,3 %. Ikke-oplyst arbejde, opstart, udvikling og særskilt SLA er ikke prissat. Tallet er ikke et garanteret virksomhedsoverskud.
 
-HTML viser en særskilt visningsafrunding, hvis andre indstillinger giver en rest ved seks decimaler. Den ændrer ikke kost eller resultat. Seks decimaler viser regnepræcision, ikke sikkerhed om det faktiske AI-forbrug.
+## Kontroller
 
-## Rettelser
+- `node test-beregning.cjs`: 648 uafhængige runde-for-runde-regnskaber for kald og måneder. Kost-oraklet summerer hver AI-runde og bruger ikke motorens trekantsformel.
+- Begge modeller, begge omstillingsruter, korte/hele/brudte minutter, 0/2/10 % gebyr, 0/20 % partner, cache, +50 % AI-kost, ekstern kost og ekstra numre.
+- Håndberegnede standardscenarier med 500/1.000/2.000/10.000 opkald. Alle opkald omstilles.
+- 6 sek. AI afregnes som 1 min.; 3 min. 1 sek. som 4 min. Tomt kald koster ikke et fantomminut.
+- 8 min. AI + op til 10.000 min. menneske: AI-kost stopper ved omstilling. Fast salgspris ændres ikke automatisk; reelle tab vises.
+- Partner kun på abonnement sammenlignes med partner på hele regningen. Enhedsøkonomi efter provision vises særskilt.
+- Den genbrugte leverandørkostmotor har desuden bestået den eksisterende uafhængige Decimal-kontrol af 122 scenarier.
+- HTML og PDF bruger samme beregningsmotor. Detaljer vises med 6 decimaler; eksplicit visningsafrunding sikrer, at kolonnernes viste delsummer stemmer. Det er ikke en leverandørudgift.
 
-- SIP afrundes nu op til hele minutter pr. opkald. Den tidligere 30-sekunders gennemsnitsreserve kunne undervurdere meget korte opkald og overvurdere opkald på præcis hele minutter. Måned og opkaldseksempler bruger nu samme metode. Ekstra reserve kan tilvælges særskilt.
-- Slutbeløbet for hvert AI-opkald rundes op til hele øre, så små beløb ikke afrundes under den aftalte mål-DG. Månedsscenariet anvender samme regel.
-- Alle pakkers DB og DG er efter betalingsgebyrer. Kostkolonnen inkluderer gebyret, og pakkerne summerer til samme DB som hovedresultatet.
-- Ekstra numre indgår nu også i delresultatet for telefonien, både som indtægt og kost.
-- Web-tale har sin egen samtalelængde. Telefonens AI-loft forkorter ikke længere web-samtaler i beregningen.
-- Negativ margin på ekstra SMS-, mail- og chatforbrug markeres, også når abonnementet skjuler tabet i månedens samlede DB.
-- Den historiske minutpakkes tabsgrænse håndterer også tab, der begynder inden de inkluderede minutter er brugt.
+## Fortolkning af risiko
 
-## Standardtal · ekskl. moms
+Ved 8 min. Gemini er variabel kost 0,7845135 kr./min. inkl. 20 % AI-reserve; DB ved 1,50 kr. er 0,7154865 kr./min. Ved yderligere 50 % AI-kost er kost 1,15516275 kr./min. og DB 0,34483725 kr./min. uden gebyr/provision.
 
-3 AI-minutter/opkald, 10 kanaler, 10.000 AI-minutter og 1.000 påbegyndte viderestillingsminutter til dansk mobil. 2.000 udgående SMS-segmenter, 500 SMS-robotsvar, 1.000 mailbehandlinger og 1.000 chatsvar. Web-tale fravalgt. Løn, support, øvrige udgifter og betalingsgebyrer: 0.
+Gennemsnittet omfatter allerede de dyre slutminutter. Første minut alene: 0,260322 kr. Ottende minut alene: 1,308705 kr. Sum af alle otte minutter: 6,276108 kr. Minut-for-minut-kolonnen beregnes som forskellen mellem den akkumulerede kost ved minut n og n-1. Det er den samme normale profil; stresstesten med flere svar/mere AI-tale er en anden profil.
 
-| Pr. kunde / måned | Gemini | OpenAI |
-|---|---:|---:|
-| Indtægt | 12.987,00 kr. | 12.987,00 kr. |
-| Direkte kost inkl. gebyr | 5.648,64 kr. | 6.512,43 kr. |
-| DB | 7.338,36 kr. | 6.474,57 kr. |
-| Resultat efter server | 7.263,76 kr. | 6.399,97 kr. |
-| DG | 56,51 % | 49,85 % |
-| Telefonresultat alene | 6.231,55 kr. | 5.367,76 kr. |
+Ved 6 svar/min. og 60 % AI-tale bliver skønnet 1,6448145 kr./min.; fast 1,50 kr. giver tab. Derfor skal token-/værktøjsgrænser, et koststop med stopreserve og automatisk omstilling implementeres. Et HTML-ark kan ikke garantere, at det faktiske system håndhæver disse regler.
 
-| Variabel enhedskost | Gemini | OpenAI |
-|---|---:|---:|
-| AI-del inkl. 20 % reserve / AI-min. | 0,366876 | 0,453254 |
-| SIP / AI-min. ved 3-minutters profil | 0,043215 | 0,043215 |
-| AI-telefon i alt / AI-min. | 0,410091 | 0,496469 |
+Lange omstillinger er ikke gratis: (0,0067 + 0,0524) USD × 6,45 = 0,381195 kr./min. til DK mobil. Salg 0,49 kr.; DB 0,108805 kr./min. før gebyr/provision. Ved positiv margin stiger DB med omstillingens længde; 100 % omstilling er et højt forbrugsscenarie, ikke et matematisk maksimalt tab.
 
-Satserne er minutbudgetter for den konkrete profil, ikke faste kostpriser for enhver samtale.
-
-## Uafhængig efterprøvning
-
-En separat Python-beregning med Decimal regner hver AI-svarrunde ud og sammenholder resultatet med JavaScript-motoren. 122 scenarier dækker begge modeller, cache, valutakurser, tokenforbrug, gebyrer, kanaludgifter, ekstra numre, inkluderede mængder og fravalgte moduler. 488 virksomhedsrækker med +50 % AI-kost og 732 komplette opkald er afstemt. Hertil kommer 1.920 marginprøver, 252 enkeltopkaldsprøver og 384 AI-loft/viderestillingsprøver samt målrettede regressionstests.
-
-PDF-tal er afstemt mod samme motordata, og alle fire sider er visuelt kontrolleret. Beregningerne bruger fuld præcision; viste afrundede tabeltal kan give en mindre afrundingsdifference, når de lægges sammen manuelt.
-
-## Genkontrollerede priskilder
-
-- [Twilio SIP](https://www.twilio.com/en-us/sip-trunking/pricing/dk): indgående 0,0067 USD/min.; udgående mobil 0,0524; fastnet 0,0200; nummer 15 USD/md.; standard kanalleje 0.
-- [Twilio viderestilling](https://www.twilio.com/docs/sip-trunking/call-transfer#pricing) og [oprunding](https://help.twilio.com/articles/223132307): både indgående og udgående PSTN-led betales; oprunding pr. opkaldsled.
-- [Twilio SMS](https://www.twilio.com/en-us/sms/pricing/dk): 0,0592 USD ud og 0,0075 USD ind pr. segment. Eventuelle tillæg skal afstemmes mod den konkrete konto.
-- [GatewayAPI](https://gatewayapi.com/pricing/): den færdigindlæste DK-tabel viste igen 0,0401 EUR pr. segment den 8/9, standardafsender.
-- [OpenAI](https://developers.openai.com/api/docs/pricing): udvidet “All models” under Realtime viste gpt-realtime-mini lyd 10 / 0,30 / 20 USD pr. mio. input/cache/output; tekst 0,60 / 0,06 / 2,40. Inputtransskription separat. [Tokenregler](https://developers.openai.com/api/docs/guides/realtime-costs).
-- [Gemini](https://ai.google.dev/gemini-api/docs/pricing): Live 3.1 lyd 3 / 12; tekst 0,75 / 4,50. SMS/mail 2.5 Flash 0,30 / 2,50; chat 3.7 Flash 0,75 / 3,75 gennem 2026. [Historik og transskription](https://ai.google.dev/gemini-api/docs/live-api/best-practices#pricing-billing).
-- [Hetzner](https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/): Tyskland/Finland CCX13 42,99 EUR og CCX23 85,99 EUR ekskl. moms og IPv4. Den eksisterende server til ca. 10 EUR er ejeroplyst.
-
-## Hvad kontrollen ikke beviser
-
-Ingen leverandørfakturaer eller produktionsmålinger er afstemt. Taleprocent, prompt, tekst/transskription, cache, værktøjsrunder, komprimering og fremtidigt forbrug er usikre. 20 % reserve er ikke et maksimum. EU/EØS og 10-100 samtidige opkald er ikke dokumenteret i produktion. Det justerbare AI-loft, automatisk omstilling og kostbaseret afregning er forslag i dokumentet; de er ikke implementeret ved at rette prisarkene.
-
-Derfor kan arket vise en matematisk dækket margin ved korrekt kostafregning, men ikke garantere virksomhedens overskud uanset drift, betaling og ukendte udgifter.
+Se [kostgrundlaget og de primære kilder](GRUNDLAG.md). Kunder og forhandlingsnoter er anonymiseret i den offentlige udgave.
