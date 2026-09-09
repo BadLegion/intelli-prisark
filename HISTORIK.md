@@ -1,3 +1,7 @@
+# 9. september 2026 · forenklet og afstemt i øre
+
+Startkost for AI og telefoni, én tydelig opkaldsberegning, ens varighed i scenarier, to decimaler og 2-siders PDF. Flersproget Gemini på Vertex AI er målopsætning; pris og EU-region afventer bekræftelse. Gældende tal findes i prisarket og KONTROL.md.
+
 # 9. september 2026 · fast pris og alle opkald omstillet
 
 Gemini er hovedmodel. Fast 1,50 kr./påbegyndt AI-minut, 2.500 kr./digital medarbejder/md., 8 min. AI + standard 10 min. mobilomstilling på alle opkald. OpenAI er reference på openai.html. Forsiden/index viser nu Gemini. Nye partner-/konkurrentcases, gennemgåede prisnoter, app/SMS-budgetforslag og 3-siders PDF. De nedenstående historiske forslag er ikke aktive priser.

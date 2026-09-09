@@ -63,4 +63,10 @@ assert.equal(s.forwarded,s.calls,'all calls transfer by default');
 for(const x of r.scenarios)assert.equal(x.s.forwarded,x.s.calls,'all calls transfer in every standard scenario');
 near(f.month(s,{calls:0,forwarded:0}).result,7500-96.75-74.6-500,'idle subscription');
 near(f.month(s,{workers:100}).hosting,773.51248,'100 worker infrastructure');
+for(const duration of [.1,1.01,3,7.99,8]){
+  const report=f.report({...s,duration});
+  for(const x of report.scenarios)near(x.actualAI,x.s.calls*duration,'selected duration drives every monthly scenario');
+  for(const x of report.journeys)near(x.aiDuration,duration,'selected duration drives transfer comparisons');
+  near(report.competitors[0].monthly,.14*6.45*duration*1000+.0067*6.45*Math.ceil(duration)*1000+3811.95+96.75,'same selected duration for competitors');
+}
 console.log(`PASS: ${checked} independent per-turn call/month ledgers; fixed pricing, both models/routes, rounding, commissions, fees, host/number costs, loss visibility and long transfers.`);

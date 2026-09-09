@@ -259,7 +259,7 @@ const FastPrice = (() => {
       const stressCost=base.totalCall+base.budget*d*.5;
       return {duration:d,...a,costPerActualMinute:a.cost/d,stressCost,stressDb:a.revenue*(1-s.fee/100)-stressCost};
     });
-    const journeys=[0,5,10,30,60].map(f=>call(s,s.aiCap,f));
+    const journeys=[0,5,10,30,60].map(f=>call(s,s.duration,f));
     const timeline=[];let previous={cost:0,revenue:0,db:0};
     for(let minute=1;minute<=Math.ceil(s.aiCap);minute++){
       const total=call(s,Math.min(minute,s.aiCap));
@@ -272,7 +272,7 @@ const FastPrice = (() => {
       {label:'3 medarbejdere · 1.000 opkald',workers:3,calls:1000,forwarded:1000},
       {label:'3 medarbejdere · 2.000 opkald',workers:3,calls:2000,forwarded:2000},
       {label:'20 medarbejdere · 10.000 opkald',workers:20,calls:10000,forwarded:10000}
-    ].map(x=>({label:x.label,...month(s,{...x,duration:s.aiCap,forwardDuration:s.forwardDuration,smsQty:0,extraNumbers:0,partner:0})}));
+    ].map(x=>({label:x.label,...month(s,{...x,duration:s.duration,forwardDuration:s.forwardDuration,smsQty:0,extraNumbers:0,partner:0})}));
     const partners=[0,10,20,30].flatMap(p=>['subscription','all'].filter(b=>p||b==='subscription').map(b=>({p,b,...month(s,{partner:p,partnerBasis:b})})));
     const alternatives=[1,1.5].flatMap(price=>[4,8].map(d=>{
       const v=E.voice(s,s.model,d),revenue=price*d;
@@ -284,8 +284,8 @@ const FastPrice = (() => {
     const competitors=[{name:'Bland Start',subscription:0,rate:.14,concurrency:10,daily:100},
       {name:'Bland Build',subscription:299,rate:.12,concurrency:50,daily:2000},
       {name:'Retell eksempel',subscription:0,rate:.11,concurrency:20,daily:null}].map(x=>({
-        ...x,monthly:x.subscription*s.usd+x.rate*s.usd*s.aiCap*1000+s.sipInUsd*s.usd*started(s.aiCap)*1000+transfer(s).cost*started(s.forwardDuration)*1000+u.number,
-        total10000:x.subscription*s.usd+x.rate*s.usd*s.aiCap*10000+s.sipInUsd*s.usd*started(s.aiCap)*10000+transfer(s).cost*started(s.forwardDuration)*10000+u.number}));
+        ...x,monthly:x.subscription*s.usd+x.rate*s.usd*s.duration*1000+s.sipInUsd*s.usd*started(s.duration)*1000+transfer(s).cost*started(s.forwardDuration)*1000+u.number,
+        total10000:x.subscription*s.usd+x.rate*s.usd*s.duration*10000+s.sipInUsd*s.usd*started(s.duration)*10000+transfer(s).cost*started(s.forwardDuration)*10000+u.number}));
     return {s,v,u,m,durationRows,journeys,timeline,tiers,scenarios,partners,alternatives,risks,competitors,
       mobile:transfer(s,'mobile'),fixed:transfer(s,'fixed')};
   }
