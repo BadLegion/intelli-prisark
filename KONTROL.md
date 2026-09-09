@@ -8,20 +8,20 @@ Aktiv hovedmodel: **Gemini, fast 1,50 kr./påbegyndt AI-minut, 8 min. AI-loft, 1
 
 | Post | DKK |
 |---|---:|
-| 3 × 2.500,00 kr. abonnement | 7.500,00 |
+| 3 × 4.000,00 kr. abonnement | 12.000,00 |
 | 8.000 AI-min. × 1,50 kr. | 12.000,00 |
 | 10.000 omstillingsmin. × 0,49 kr. | 4.900,00 |
-| Samlet indtægt | 24.400,00 |
+| Samlet indtægt | 28.900,00 |
 | Gemini inkl. reserve + indgående SIP | 6.276,11 |
 | Omstilling, begge SIP-led | 3.811,95 |
 | Ét mobilnummer | 96,75 |
 | Samlet direkte kost | 10.184,81 |
-| DB | 14.215,19 |
+| DB | 18.715,19 |
 | Server | 74,60 |
 | Supportreserve, planlægningsskøn | 500,00 |
-| Resultat før skat efter valgte udgifter | 13.640,59 |
+| Resultat før skat efter valgte udgifter | 18.140,59 |
 
-DG = 14.215,19 / 24.400,00 = ca. 58,3 %. Ikke-oplyst arbejde, opstart, udvikling og særskilt SLA er ikke prissat. Tallet er ikke et garanteret virksomhedsoverskud.
+DG = 18.715,19 / 28.900,00 = ca. 64,8 %. Ikke-oplyst arbejde, opstart, udvikling og særskilt SLA er ikke prissat. Tallet er ikke et garanteret virksomhedsoverskud.
 
 ## Kontroller
 

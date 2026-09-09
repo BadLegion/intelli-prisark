@@ -1,6 +1,6 @@
 # INTELLI · Gemini-prisark
 
-Fast salgsforslag: **1,50 kr. pr. påbegyndt AI-minut + 2.500,00 kr. pr. digital medarbejder om måneden**, ekskl. moms.
+Fast salgsforslag: **1,50 kr. pr. påbegyndt AI-minut + 4.000,00 kr. pr. digital medarbejder om måneden**, ekskl. moms.
 
 - [Kompakt overblik · 7 sider](https://badlegion.github.io/intelli-prisark/praesentation.html)
 - [Redigerbar PowerPoint](https://badlegion.github.io/intelli-prisark/INTELLI-prispraesentation.pptx)

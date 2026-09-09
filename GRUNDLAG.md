@@ -14,7 +14,7 @@
 | Mailtransport | 0,00 kr. ekstra, oplyst af ejer | 0,00 kr. |
 | AI-mail / AI-chat / AI-SMS | 0,08 / 0,16 / 0,04 kr. | Se pakker i HTML |
 | DK mobilnummer | 96,75 kr./md. | Ét inkluderet, ekstra 125,00 kr./md. |
-| Standard SIP-kanalleje | 0,00 kr./md. | Digital medarbejder: 2.500,00 kr./md. |
+| Standard SIP-kanalleje | 0,00 kr./md. | Digital medarbejder: 4.000,00 kr./md. |
 
 SIP er indgående AI-telefoni på dansk mobilnummer. Selvstændig udgående AI-telefoni er ikke prissat her. Viderestilling til andre lande, specialnumre, warm-transfer-overlap, ekstra konferencer og betalte telefeatures kræver særskilt kost. Der er ingen besparelse for gratis telefonben i beregningen.
 
@@ -54,11 +54,11 @@ Alle opkald omstillet er et konservativt forbrugsscenarie, ikke den størst muli
 
 Målopsætning: Vertex AI med Gemini 3.1 Flash Live, når tilgængelig dér, og dokumenteret EU/EØS-behandling i hele kæden. Gemini er flersproget. Modellens tilgængelighed, EU-region og pris på Vertex er ikke bekræftet i dette ark. Priserne ovenfor er nuværende Developer API-priser, ikke en verificeret Vertex-pris. OpenAI er reference. Et europæisk telefonnummer dokumenterer ikke placeringen af AI-behandling.
 
-## Prisnoternes to forskellige oplæg
+## Afstemt kanalpris fra prisnoterne
 
-20 medarbejdere × 2.500,00 kr. er 50.000,00 kr./md. Et tilbud på 60.000,00 kr. kræver 3.000,00 kr. pr. medarbejder eller en særskilt service på 10.000,00 kr.
+Gældende beregningspris er 4.000,00 kr. pr. digital medarbejder/md. ekskl. moms, bekræftet af ejer 9. september 2026. Tre medarbejdere koster 12.000,00 kr./md. før minutforbrug. De 40 % rabat i oplægget er allerede indregnet i de 4.000,00 kr.; rabatten trækkes ikke fra igen. Oplæggets samlede førpris for tre er dermed 20.000,00 kr.
 
-3 medarbejdere à 4.000,00 kr. er 12.000,00 kr./md. Med 40 % rabat er førprisen 20.000,00 kr. Det er et andet tilbud end standardens 7.500,00 kr. for tre. Særtilbuddets ekstra leverancer og kost er ikke defineret.
+Noterne indeholder også en prislinje på 2.500,00 kr. Denne bruges ikke længere som standard. Ved 4.000,00 kr. er 20 medarbejdere 80.000,00 kr./md. Noternes 20 for 60.000,00 kr. er et særskilt mængdetilbud på 3.000,00 kr. pr. medarbejder (25 % under den gældende beregningspris). Det er ikke automatisk indregnet i tabellerne; der kræves en særskilt aftale. Førprisen i tre-personersoplægget og mængdetilbuddet for 20 er to forskellige prisgrundlag.
 
 ## Leverandører og kilder
 

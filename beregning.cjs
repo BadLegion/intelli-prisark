@@ -209,7 +209,7 @@ if(typeof module!=='undefined'&&module.exports)module.exports={DEFAULTS,TIERS,vo
 /* Fixed-price proposal, 2026-09-09. No supplier-cost clipping or automatic repricing. */
 const FastPrice = (() => {
   const E = typeof module !== 'undefined' && module.exports ? {DEFAULTS,voice,units,infrastructure} : {DEFAULTS,voice,units,infrastructure};
-  const defaults = {...E.DEFAULTS, model:'gemini', workers:3, workerPrice:2500, fixedRate:1.50, aiCap:8,
+  const defaults = {...E.DEFAULTS, model:'gemini', workers:3, workerPrice:4000, fixedRate:1.50, aiCap:8,
     calls:1000, duration:8, forwarded:1000, forwardDuration:10, smsQty:0,
     extraNumbers:0, support:500, partner:0, partnerBasis:'subscription',
     transferPrice:.49, transferFixedPrice:.29, fee:0, other:0, salary:0};

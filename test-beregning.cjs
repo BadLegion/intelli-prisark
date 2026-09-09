@@ -20,16 +20,18 @@ function oracle(s,d){
   return {raw,budget,cost:budget+(Math.ceil(d)+s.rounding/60)*s.sipInUsd*s.usd+d*s.phoneExtra};
 }
 const s=f.defaults,r=f.report(s);
+assert.equal(s.workerPrice,4000,'confirmed price per digital worker');
+near(r.m.subscription,12000,'three workers: no second 40% discount');
 near(f.voice(s,'gemini',3).totalCall,1.230273,'Gemini 3min');
 near(f.voice(s,'gemini',8).totalCall,6.276108,'Gemini 8min');
-near(r.m.revenue,24400,'revenue');near(r.m.supplierCost,10184.808,'suppliers');near(r.m.db,14215.192,'DB');near(r.m.result,13640.592,'result');
-for(const [i,R,C,DB,P] of [[0,10950,5140.779,5809.221,5234.621],[1,24400,10184.808,14215.192,13640.592],[2,41300,20272.866,21027.134,20452.534],[3,219000,100977.33,118022.67,117448.07]]){
+near(r.m.revenue,28900,'revenue');near(r.m.supplierCost,10184.808,'suppliers');near(r.m.db,18715.192,'DB');near(r.m.result,18140.592,'result');
+for(const [i,R,C,DB,P] of [[0,12450,5140.779,7309.221,6734.621],[1,28900,10184.808,18715.192,18140.592],[2,45800,20272.866,25527.134,24952.534],[3,249000,100977.33,148022.67,147448.07]]){
   for(const [key,v] of Object.entries({revenue:R,directCost:C,db:DB,result:P}))near(r.scenarios[i][key],v,'scenario '+i+' '+key);
 }
-near(f.month(s,{partner:20}).commission,1500,'partner subscription');
-near(f.month(s,{partner:20}).result,12140.592,'partner subscription result');
-near(f.month(s,{partner:20,partnerBasis:'all'}).commission,4880,'partner all');
-near(f.month(s,{partner:20,partnerBasis:'all'}).result,8760.592,'partner all result');
+near(f.month(s,{partner:20}).commission,2400,'partner subscription');
+near(f.month(s,{partner:20}).result,15740.592,'partner subscription result');
+near(f.month(s,{partner:20,partnerBasis:'all'}).commission,5780,'partner all');
+near(f.month(s,{partner:20,partnerBasis:'all'}).result,12360.592,'partner all result');
 near(f.call(s,8,60).cost,29.147808,'8+60 supplier cost');near(f.call(s,8,60).revenue,41.4,'8+60 revenue');
 near(f.call(s,.1).revenue,1.5,'6 seconds are one started minute');
 near(f.call(s,3+1/60).revenue,6,'3m1s are four started minutes');
@@ -44,7 +46,7 @@ for(const model of ['gemini','openai'])for(const d of [.01,.1,.99,1,1.01,3,3+1/6
   const z={...s,model,turns,fee,partner,transferDestination:destination,duration:d,calls:37,forwarded:11,forwardDuration:2.01,smsQty:19,extraNumbers:2,workers:50,phoneExtra:.012,rounding:8,future:50,cache:model==='openai'?50:0};
   const o=oracle(z,d),a=f.call(z,d,2.01),R=Math.ceil(d)*1.5+3*(destination==='mobile'?.49:.29),T=(.0067+(destination==='mobile'?.0524:.02))*6.45;
   near(a.cost,o.cost+3*T,'independent individual cost');near(a.revenue,R,'fixed sales independent of cost');near(a.db,R*(1-fee/100)-a.cost,'call DB');
-  const m=f.month(z),subscription=50*2500,rev=subscription+37*Math.ceil(d)*1.5+11*3*(destination==='mobile'?.49:.29)+19*.35+2*125;
+  const m=f.month(z),subscription=50*4000,rev=subscription+37*Math.ceil(d)*1.5+11*3*(destination==='mobile'?.49:.29)+19*.35+2*125;
   const cost=3*96.75+37*o.cost+11*3*T+19*.0401*7.46;
   near(m.revenue,rev,'month revenue');near(m.supplierCost,cost,'month direct cost');near(m.commission,subscription*partner/100,'partner');
   const host=(42.99*1.2+.5)*7.46;
@@ -61,7 +63,7 @@ for(const dest of ['mobile','fixed'])for(const F of [0,.1,1,1.01,10,60,600,10000
 near(r.competitors[0].monthly,11478.42,'Bland Start');near(r.competitors[1].total10000,105522,'Bland Build');near(r.competitors[2].monthly,9930.42,'Retell example');
 assert.equal(s.forwarded,s.calls,'all calls transfer by default');
 for(const x of r.scenarios)assert.equal(x.s.forwarded,x.s.calls,'all calls transfer in every standard scenario');
-near(f.month(s,{calls:0,forwarded:0}).result,7500-96.75-74.6-500,'idle subscription');
+near(f.month(s,{calls:0,forwarded:0}).result,12000-96.75-74.6-500,'idle subscription');
 near(f.month(s,{workers:100}).hosting,773.51248,'100 worker infrastructure');
 for(const duration of [.1,1.01,3,7.99,8]){
   const report=f.report({...s,duration});
