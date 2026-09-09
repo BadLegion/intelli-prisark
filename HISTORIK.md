@@ -1,3 +1,7 @@
+# 9. september 2026 · 8 sider med salgspriser på forsiden
+
+Ny forside med fire store bokse: AI 1,50 kr. pr. påbegyndt minut, digital medarbejder 4.000,00 kr. pr. kanal/md., mobilomstilling 0,49 kr. og fastnetomstilling 0,29 kr. pr. påbegyndt minut. De syv eksisterende sider følger efter med samme indhold og tal. HTML, PDF og redigerbar PowerPoint har otte sider.
+
 # 9. september 2026 · korte tekster og tydelige delsummer
 
 Kortere tekster og tydelige plus-, minus- og lighedstegn i overblikket. Månedsregnskabet viser abonnement og forbrug frem til indtægt, DB og resultat. AI- og SMS-kost har korte regnelinjer. Priser og regnskabsresultater er uændrede.

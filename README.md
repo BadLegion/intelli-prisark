@@ -2,10 +2,10 @@
 
 Fast salgsforslag: **1,50 kr. pr. påbegyndt AI-minut + 4.000,00 kr. pr. digital medarbejder om måneden**, ekskl. moms.
 
-- [Kompakt overblik · 7 sider](https://badlegion.github.io/intelli-prisark/praesentation.html)
+- [Kompakt overblik · 8 sider](https://badlegion.github.io/intelli-prisark/praesentation.html)
 - [Redigerbar PowerPoint](https://badlegion.github.io/intelli-prisark/INTELLI-prispraesentation.pptx)
 - [Åbn Gemini-prisarket](https://badlegion.github.io/intelli-prisark/gemini.html)
-- [Printklar PDF · 7 sider](https://badlegion.github.io/intelli-prisark/INTELLI-prisark-print.pdf)
+- [Printklar PDF · 8 sider](https://badlegion.github.io/intelli-prisark/INTELLI-prisark-print.pdf)
 - [OpenAI · reference](https://badlegion.github.io/intelli-prisark/openai.html)
 - [Kostgrundlag](GRUNDLAG.md) og [regnekontrol](KONTROL.md)
 
@@ -17,7 +17,7 @@ AI-kost er et kvalificeret skøn, ikke målt fakturakost eller en garanti. Tidsl
 
 ## Arbejd med tallene
 
-HTML-filerne er selvstændige og har ingen eksterne script-afhængigheder. Redigér forudsætninger i arket og brug **Gem HTML med mine tal**. Det kompakte overblik, PowerPoint og PDF viser samme standardscenarie fordelt på syv sider, med alle minutpriser på første side. Prisberegnerens Print-knap bruger dine aktuelle tal.
+HTML-filerne er selvstændige og har ingen eksterne script-afhængigheder. Redigér forudsætninger i arket og brug **Gem HTML med mine tal**. Det kompakte overblik, PowerPoint og PDF viser samme standardscenarie fordelt på otte sider. Forsiden viser salgspriser i fire store bokse. Side 2 sammenligner minutpriser med kost og DB. Prisberegnerens Print-knap bruger dine aktuelle tal.
 
 `beregning.cjs` indeholder beregningen. Kør den uafhængige kontrol med Node:
 
