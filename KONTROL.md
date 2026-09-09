@@ -34,7 +34,8 @@ DG = 14.215,19 / 24.400,00 = ca. 58,3 %. Ikke-oplyst arbejde, opstart, udvikling
 - Den genbrugte leverandørkostmotor har desuden bestået den eksisterende uafhængige Decimal-kontrol af 122 scenarier.
 - 126 kontroller af den faktiske HTML-renderer: enhedspriser, opkaldsfaser, moduler, månedsregnskaber, minutudvikling og AI-detaljer. Alle viste kronebeløb har to decimaler, og øresummerne stemmer.
 - Ændret AI-varighed følger med i alle månedsscenarier, viderestillings- og konkurrenttabeller.
-- HTML og PDF bruger samme beregningsmotor. Alle kronebeløb vises med 2 decimaler; eksplicit visningsafrunding sikrer, at kolonnernes viste delsummer stemmer. Det er ikke en leverandørudgift.
+- Det kompakte overblik har 7 sider og 12 tabeller. Alle tabeller og kronebeløb er afstemt mellem HTML, PDF og den redigerbare PowerPoint; siderne er desuden visuelt gennemgået.
+- HTML, PDF og PowerPoint bruger samme beregningsgrundlag. Alle kronebeløb vises med 2 decimaler; eksplicit visningsafrunding sikrer, at kolonnernes viste delsummer stemmer. Det er ikke en leverandørudgift.
 
 ## Fortolkning af risiko
 

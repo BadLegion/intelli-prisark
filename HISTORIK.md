@@ -1,3 +1,7 @@
+# 9. september 2026 · kompakt overblik på 7 sider
+
+Alle minutpriser samlet på første side. AI-kost og minutudvikling, digitale medarbejdere, SMS/mail, hele opkald, kundescenarier og forudsætninger på seks efterfølgende kompakte sider. Samme tal i browser, printklar PDF og redigerbar PowerPoint. Prisberegnerens beregninger er uændrede.
+
 # 9. september 2026 · forenklet og afstemt i øre
 
 Startkost for AI og telefoni, én tydelig opkaldsberegning, ens varighed i scenarier, to decimaler og 2-siders PDF. Flersproget Gemini på Vertex AI er målopsætning; pris og EU-region afventer bekræftelse. Gældende tal findes i prisarket og KONTROL.md.
