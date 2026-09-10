@@ -2,6 +2,10 @@
 
 Fast salgsforslag: **1,50 kr. pr. påbegyndt AI-minut + 4.000,00 kr. pr. digital medarbejder om måneden**, ekskl. moms.
 
+Forsidens fire priser inkluderer 30 % rabat. Rabatten trækkes ikke fra igen.
+
+- [Salgspriser · kun forsiden](https://badlegion.github.io/intelli-prisark/salgspriser.html)
+- [PDF · kun forsiden](https://badlegion.github.io/intelli-prisark/INTELLI-salgspriser.pdf)
 - [Kompakt overblik · 8 sider](https://badlegion.github.io/intelli-prisark/praesentation.html)
 - [Redigerbar PowerPoint](https://badlegion.github.io/intelli-prisark/INTELLI-prispraesentation.pptx)
 - [Åbn Gemini-prisarket](https://badlegion.github.io/intelli-prisark/gemini.html)
@@ -17,7 +21,7 @@ AI-kost er et kvalificeret skøn, ikke målt fakturakost eller en garanti. Tidsl
 
 ## Arbejd med tallene
 
-HTML-filerne er selvstændige og har ingen eksterne script-afhængigheder. Redigér forudsætninger i arket og brug **Gem HTML med mine tal**. Det kompakte overblik, PowerPoint og PDF viser samme standardscenarie fordelt på otte sider. Forsiden viser salgspriser i fire store bokse. Side 2 sammenligner minutpriser med kost og DB. Prisberegnerens Print-knap bruger dine aktuelle tal.
+HTML-filerne er selvstændige og har ingen eksterne script-afhængigheder. Redigér forudsætninger i arket og brug **Gem HTML med mine tal**. Det kompakte overblik, PowerPoint og PDF viser samme standardscenarie fordelt på otte sider. Forsiden viser digital medarbejder, AI-telefon, omstilling til 0,50 kr./min. og SMS til 0,35 kr./segment fra GatewayAPI. Side 2 sammenligner minutpriser med kost og DB. Prisberegnerens Print-knap bruger dine aktuelle tal.
 
 `beregning.cjs` indeholder beregningen. Kør den uafhængige kontrol med Node:
 
@@ -26,4 +30,4 @@ node test-beregning.cjs
 node test-visning.cjs
 ```
 
-Kontrolleret 9. september 2026. Tidligere tilbud findes i Git-historikken. Forsiden viser nu Gemini; OpenAI er flyttet til `openai.html`.
+Regnskab opdateret 10. september 2026. Tidligere tilbud findes i Git-historikken. Forsiden viser nu Gemini; OpenAI er flyttet til `openai.html`.

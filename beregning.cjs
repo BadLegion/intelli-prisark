@@ -206,13 +206,13 @@ function calculate(input) {
 }
 if(typeof module!=='undefined'&&module.exports)module.exports={DEFAULTS,TIERS,voice,infrastructure,units,protectedRate,callEconomics,transferPricing,cappedJourney,planBill,phoneEconomics,calculate};
 
-/* Fixed-price proposal, 2026-09-09. No supplier-cost clipping or automatic repricing. */
+/* Fixed-price proposal, 2026-09-10. No supplier-cost clipping or automatic repricing. */
 const FastPrice = (() => {
   const E = typeof module !== 'undefined' && module.exports ? {DEFAULTS,voice,units,infrastructure} : {DEFAULTS,voice,units,infrastructure};
   const defaults = {...E.DEFAULTS, model:'gemini', workers:3, workerPrice:4000, fixedRate:1.50, aiCap:8,
     calls:1000, duration:8, forwarded:1000, forwardDuration:10, smsQty:0,
     extraNumbers:0, support:500, partner:0, partnerBasis:'subscription',
-    transferPrice:.49, transferFixedPrice:.29, fee:0, other:0, salary:0};
+    transferPrice:.50, transferFixedPrice:.50, fee:0, other:0, salary:0};
   const started = x => x>0 ? Math.ceil(x-1e-10) : 0;
   const profit = (revenue,cost,fee=0) => ({revenue,cost,fees:revenue*fee/100,db:revenue*(1-fee/100)-cost,dg:revenue ? (revenue*(1-fee/100)-cost)/revenue : null});
   function transfer(s,destination=s.transferDestination) {

@@ -4,7 +4,7 @@
 @media(max-width:760px){main{padding:16px}header{display:block}nav{margin-top:16px}h1{font-size:31px}.cards,.controls{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.panel,details{padding:15px}.source-list{columns:1}.card b{font-size:24px}table{font-size:12px}}
 @media print{@page{size:A4 landscape;margin:10mm}body{background:white;font-size:10px}main{max-width:none;padding:0}nav,.toolbar,.controls,details:not([open]),.no-print{display:none}h1{font-size:25px}.panel,details{break-inside:avoid;margin-top:12px;padding:12px}.cards{gap:6px;margin:8px 0}.card{padding:10px}.card b{font-size:22px}td,th{padding:5px}table{font-size:10px}h2{font-size:16px}footer{padding:10px 0}}
 </style></head><body><main>
-<header><div class="eyebrow">INTELLI / PRISARK / 9. SEPTEMBER 2026</div><nav><a href="praesentation.html">Kompakt overblik</a><a class="active" href="gemini.html">Gemini</a><a class="" href="openai.html">OpenAI-reference</a><a href="INTELLI-prisark-print.pdf">Printklar PDF</a><a href="https://github.com/BadLegion/intelli-prisark">GitHub</a></nav></header>
+<header><div class="eyebrow">INTELLI / PRISARK / 10. SEPTEMBER 2026</div><nav><a href="praesentation.html">Kompakt overblik</a><a class="active" href="gemini.html">Gemini</a><a class="" href="openai.html">OpenAI-reference</a><a href="INTELLI-prisark-print.pdf">Printklar PDF</a><a href="https://github.com/BadLegion/intelli-prisark">GitHub</a></nav></header>
 <h1>Vores kost. Kundens pris. Vores indtjening.</h1>
 <p class="muted">Gemini 3.1 Flash Live · foreløbigt kostbudget · Flersproget AI · Alle beløb i DKK ekskl. moms.</p>
 <p class="note">Planlagt: Vertex AI med Gemini 3.1 Flash Live, når den bliver tilgængelig dér. EU/EØS er et lanceringskrav. Modellen, EU-regionen og Vertex-prisen skal bekræftes; tallene bruger foreløbigt Developer API-priser.</p>
@@ -237,13 +237,13 @@ function calculate(input) {
 }
 if(typeof module!=='undefined'&&module.exports)module.exports={DEFAULTS,TIERS,voice,infrastructure,units,protectedRate,callEconomics,transferPricing,cappedJourney,planBill,phoneEconomics,calculate};
 
-/* Fixed-price proposal, 2026-09-09. No supplier-cost clipping or automatic repricing. */
+/* Fixed-price proposal, 2026-09-10. No supplier-cost clipping or automatic repricing. */
 const FastPrice = (() => {
   const E = typeof module !== 'undefined' && module.exports ? require('./prismodel-engine.js') : {DEFAULTS,voice,units,infrastructure};
   const defaults = {...E.DEFAULTS, model:'gemini', workers:3, workerPrice:4000, fixedRate:1.50, aiCap:8,
     calls:1000, duration:8, forwarded:1000, forwardDuration:10, smsQty:0,
     extraNumbers:0, support:500, partner:0, partnerBasis:'subscription',
-    transferPrice:.49, transferFixedPrice:.29, fee:0, other:0, salary:0};
+    transferPrice:.50, transferFixedPrice:.50, fee:0, other:0, salary:0};
   const started = x => x>0 ? Math.ceil(x-1e-10) : 0;
   const profit = (revenue,cost,fee=0) => ({revenue,cost,fees:revenue*fee/100,db:revenue*(1-fee/100)-cost,dg:revenue ? (revenue*(1-fee/100)-cost)/revenue : null});
   function transfer(s,destination=s.transferDestination) {

@@ -1,3 +1,11 @@
+# 10. september 2026 · INTELLI-forside til sort-hvid print
+
+Forsiden bruger INTELLI-ordmærke, versaler og enkle skillelinjer fra den eksisterende visuelle identitet. Sorte tal, hvide prisbokse og tydelige rammer fungerer uden farveprint og store mørke flader. Priser og beregninger er uændrede.
+
+# 10. september 2026 · omstilling til 0,50 kr. og SMS på forsiden
+
+Forsiden viser digital medarbejder, AI-telefon, omstilling og SMS i den rækkefølge. Omstilling til DK mobil og fastnet koster nu 0,50 kr. pr. påbegyndt minut. SMS-boksen viser GatewayAPI: 0,35 kr. pr. udgående segment. Ejer har angivet, at de fire priser inkluderer 30 % rabat; ingen ekstra rabat trækkes fra. Forsiden har kun overskrift, rabat-/momsoplysning og prisbokse og findes også som selvstændig HTML og PDF. Alle berørte opkalds-, måneds- og partnerberegninger følger de nye salgspriser. Leverandørkost er uændret.
+
 # 9. september 2026 · 8 sider med salgspriser på forsiden
 
 Ny forside med fire store bokse: AI 1,50 kr. pr. påbegyndt minut, digital medarbejder 4.000,00 kr. pr. kanal/md., mobilomstilling 0,49 kr. og fastnetomstilling 0,29 kr. pr. påbegyndt minut. De syv eksisterende sider følger efter med samme indhold og tal. HTML, PDF og redigerbar PowerPoint har otte sider.

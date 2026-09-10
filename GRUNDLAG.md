@@ -1,4 +1,4 @@
-# Kostgrundlag · aktivt forslag 9. september 2026
+# Kostgrundlag · aktivt forslag 10. september 2026
 
 ## Faste priser
 
@@ -7,8 +7,8 @@
 | Gemini AI-telefon, 3-min.-opkald | 0,41 kr./faktisk min. | 1,50 kr./påbegyndt min. |
 | Gemini AI-telefon, 8-min.-opkald | 0,78 kr./faktisk min. | 1,50 kr./påbegyndt min. |
 | Indgående DK mobil-SIP | 0,04 kr./påbegyndt min. | Inkl. i AI- eller omstillingstakst |
-| Omstilling DK mobil, begge led | 0,38 kr./påbegyndt min. | 0,49 kr./påbegyndt min. |
-| Omstilling DK fastnet, begge led | 0,17 kr./påbegyndt min. | 0,29 kr./påbegyndt min. |
+| Omstilling DK mobil, begge led | 0,38 kr./påbegyndt min. | 0,50 kr./påbegyndt min. |
+| Omstilling DK fastnet, begge led | 0,17 kr./påbegyndt min. | 0,50 kr./påbegyndt min. |
 | GatewayAPI SMS ud | 0,30 kr./segment | 0,35 kr./segment |
 | Twilio SMS ud / ind | 0,38 / 0,05 kr./segment | 0,45 / 0,06 kr./segment |
 | Mailtransport | 0,00 kr. ekstra, oplyst af ejer | 0,00 kr. |
@@ -30,7 +30,7 @@ Tekstpakker bruger kodegrundlagets Gemini-ruter: SMS/mail 2.5 Flash, webchat 3.7
 
 ## Afregning og resultat
 
-AI-beløb = 1,50 × ceil(AI-fasens minutter), højst 8 min. AI i tilbuddet. 6 sekunder koster 1,50 kr.; 3 min. 1 sek. koster 6,00 kr. Viderestilling = 0,49 × ceil(omstillingens minutter) til DK mobil. Fastnet = 0,29. Hver fase afrundes pr. opkald. For en bro med ét sammenhængende indgående ben kan den faktiske leverandøroprunding være lidt lavere.
+AI-beløb = 1,50 × ceil(AI-fasens minutter), højst 8 min. AI i tilbuddet. 6 sekunder koster 1,50 kr.; 3 min. 1 sek. koster 6,00 kr. Viderestilling = 0,50 × ceil(omstillingens minutter) til både DK mobil og fastnet. Hver fase afrundes pr. opkald. For en bro med ét sammenhængende indgående ben kan den faktiske leverandøroprunding være lidt lavere.
 
 DB = indtægt − leverandørkost inkl. AI-reserve − betalingsgebyr − partnerprovision. DG = DB / indtægt. Resultat før skat = DB − server − supportreserve − øvrige udgifter − ejerløn. Serveren tælles én gang pr. installation, ikke én gang pr. medarbejder. Ét telefonnummer tælles én gang pr. kunde.
 
@@ -56,7 +56,7 @@ Målopsætning: Vertex AI med Gemini 3.1 Flash Live, når tilgængelig dér, og 
 
 ## Afstemt kanalpris fra prisnoterne
 
-Gældende beregningspris er 4.000,00 kr. pr. digital medarbejder/md. ekskl. moms, bekræftet af ejer 9. september 2026. Tre medarbejdere koster 12.000,00 kr./md. før minutforbrug. De 40 % rabat i oplægget er allerede indregnet i de 4.000,00 kr.; rabatten trækkes ikke fra igen. Oplæggets samlede førpris for tre er dermed 20.000,00 kr.
+Gældende beregningspris er 4.000,00 kr. pr. digital medarbejder/md. ekskl. moms. Tre medarbejdere koster 12.000,00 kr./md. før minutforbrug. Ejer har 10. september 2026 angivet, at forsiden viser priser med 30 % rabat medregnet: medarbejder 4.000,00 kr./md., AI 1,50 kr./min., omstilling 0,50 kr./min. og GatewayAPI SMS 0,35 kr./segment. Rabatten trækkes ikke fra igen. Prisnoternes 40 % og førpris på 20.000,00 kr. tilhører det tidligere oplæg.
 
 Noterne indeholder også en prislinje på 2.500,00 kr. Denne bruges ikke længere som standard. Ved 4.000,00 kr. er 20 medarbejdere 80.000,00 kr./md. Noternes 20 for 60.000,00 kr. er et særskilt mængdetilbud på 3.000,00 kr. pr. medarbejder (25 % under den gældende beregningspris). Det er ikke automatisk indregnet i tabellerne; der kræves en særskilt aftale. Førprisen i tre-personersoplægget og mængdetilbuddet for 20 er to forskellige prisgrundlag.
 

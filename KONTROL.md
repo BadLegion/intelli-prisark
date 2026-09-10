@@ -1,4 +1,4 @@
-# Regnekontrol · 9. september 2026
+# Regnekontrol · 10. september 2026
 
 Aktiv hovedmodel: **Gemini, fast 1,50 kr./påbegyndt AI-minut, 8 min. AI-loft, 100 % viderestilling**. Den gamle kostfølgende salgsregel er ikke aktiv.
 
@@ -10,18 +10,18 @@ Aktiv hovedmodel: **Gemini, fast 1,50 kr./påbegyndt AI-minut, 8 min. AI-loft, 1
 |---|---:|
 | 3 × 4.000,00 kr. abonnement | 12.000,00 |
 | 8.000 AI-min. × 1,50 kr. | 12.000,00 |
-| 10.000 omstillingsmin. × 0,49 kr. | 4.900,00 |
-| Samlet indtægt | 28.900,00 |
+| 10.000 omstillingsmin. × 0,50 kr. | 5.000,00 |
+| Samlet indtægt | 29.000,00 |
 | Gemini inkl. reserve + indgående SIP | 6.276,11 |
 | Omstilling, begge SIP-led | 3.811,95 |
 | Ét mobilnummer | 96,75 |
 | Samlet direkte kost | 10.184,81 |
-| DB | 18.715,19 |
+| DB | 18.815,19 |
 | Server | 74,60 |
 | Supportreserve, planlægningsskøn | 500,00 |
-| Resultat før skat efter valgte udgifter | 18.140,59 |
+| Resultat før skat efter valgte udgifter | 18.240,59 |
 
-DG = 18.715,19 / 28.900,00 = ca. 64,8 %. Ikke-oplyst arbejde, opstart, udvikling og særskilt SLA er ikke prissat. Tallet er ikke et garanteret virksomhedsoverskud.
+DG = 18.815,19 / 29.000,00 = ca. 64,9 %. Ikke-oplyst arbejde, opstart, udvikling og særskilt SLA er ikke prissat. Tallet er ikke et garanteret virksomhedsoverskud.
 
 ## Kontroller
 
@@ -46,6 +46,6 @@ Gennemsnittet omfatter allerede de dyre slutminutter. Første minut alene: 0,26 
 
 Ved 6 svar/min. og 60 % AI-tale bliver skønnet 1,64 kr./min.; fast 1,50 kr. giver tab. Derfor skal token-/værktøjsgrænser, et koststop med stopreserve og automatisk omstilling implementeres. Et HTML-ark kan ikke garantere, at det faktiske system håndhæver disse regler.
 
-Lange omstillinger er ikke gratis: (0,0067 + 0,0524) USD × 6,45 = 0,38 kr./min. til DK mobil. Salg 0,49 kr.; DB 0,11 kr./min. før gebyr/provision. Ved positiv margin stiger DB med omstillingens længde; 100 % omstilling er et højt forbrugsscenarie, ikke et matematisk maksimalt tab.
+Lange omstillinger er ikke gratis: (0,0067 + 0,0524) USD × 6,45 = 0,38 kr./min. til DK mobil. Salg 0,50 kr.; DB 0,12 kr./min. før gebyr/provision. Ved positiv margin stiger DB med omstillingens længde; 100 % omstilling er et højt forbrugsscenarie, ikke et matematisk maksimalt tab.
 
 Se [kostgrundlaget og de primære kilder](GRUNDLAG.md). Kunder og forhandlingsnoter er anonymiseret i den offentlige udgave.
